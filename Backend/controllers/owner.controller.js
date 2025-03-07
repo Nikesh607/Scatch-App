@@ -43,7 +43,12 @@ module.exports.loginOwner = async (req, res) => {
         return res.status(401).json({ message: 'Invalid email or password' });
     }
     const token = owner.generateAuthToken();
-    res.cookie('token', token);
+    res.cookie('token', token, {
+        httpOnly: true,
+        secure: true, // Required for HTTPS connections
+        sameSite: 'none', // Critical for cross-site cookies
+        maxAge: 24 * 60 * 60 * 1000 // 1 day
+      });
 
     res.status(200).json({ token, owner });
 }
