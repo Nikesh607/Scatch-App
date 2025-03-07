@@ -18,17 +18,17 @@ const ProductList = ({ sortBy, newcollection }) => {
 
   const handleAddToCart = async (product) => {
     try {
-        setError(null);
-        setAdding(product._id);
-        await addToCart(product);
+      setError(null);
+      setAdding(product._id);
+      await addToCart(product);
     } catch (error) {
-        setError(error.response?.data?.message || 'Failed to add to cart');
-        console.error('Failed to add to cart:', error);
+      setError(error.message || 'Failed to add to cart');
+      console.error('Failed to add to cart:', error);
     } finally {
-        setAdding(null);
-        alert("product added to cart")
+      setAdding(null);
+      alert('Product added to cart');
     }
-};
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -53,10 +53,11 @@ const ProductList = ({ sortBy, newcollection }) => {
   }, [sortedProducts, newcollection])
 
   return (
-    <div className="right-conatainer my-6 w-full flex gap-12 flex-wrap min-h-[calc(100vh-120px)]">
+
+    <div className="right-container my-6 w-full flex gap-12 flex-wrap min-h-[calc(100vh-120px)]">
       {error && (
         <div className="fixed top-4 right-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-          {error}
+          {error === 'Authentication required' ? 'Please log in to add items to your cart.' : error}
         </div>
       )}
       {displayedProducts.map((product) => (
