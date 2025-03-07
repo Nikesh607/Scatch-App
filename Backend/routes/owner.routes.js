@@ -29,7 +29,7 @@ router.get('/profile',authMiddleware.authOwner, ownerController.getOwnerProfile)
 
 router.get('/logout',authMiddleware.authOwner, ownerController.logoutOwner);
 
-router.post('/createproduct', upload.single('image'), uploadController.uploadFile);
+router.post('/createproduct', upload.single('image'),authMiddleware.authOwner, uploadController.uploadFile);
 
 
 module.exports = router;
