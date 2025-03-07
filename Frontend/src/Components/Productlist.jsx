@@ -26,6 +26,7 @@ const ProductList = ({ sortBy, newcollection }) => {
         console.error('Failed to add to cart:', error);
     } finally {
         setAdding(null);
+        alert("product added to cart")
     }
 };
 
