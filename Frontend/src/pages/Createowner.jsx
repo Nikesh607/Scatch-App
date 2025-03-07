@@ -27,7 +27,7 @@ const Createowner = () => {
                 gstin: gstin,
             }
 
-            const { data } = await axiosInstance.post('/owner/create', registerData, {
+            const { data } = await axiosInstance.post('/owners/create', registerData, {
                 withCredentials: true  // Add this to ensure cookies are handled
             })
 
