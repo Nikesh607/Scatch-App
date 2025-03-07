@@ -6,7 +6,7 @@ module.exports.uploadFile = async (req, res) =>{
     }
     
     const {name,price,discount,bgcolor,panelcolor,textcolor,} = req.body;
-    const image = (`/uploads/${req.file.filename}`);
+    const imageUrl = req.file.path;
 
     try {
         const products = await productModel.create({
@@ -16,7 +16,7 @@ module.exports.uploadFile = async (req, res) =>{
             bgcolor,
             panelcolor,
             textcolor,
-            image,
+            image: imageUrl,
         })
         res.status(200).json({products});
         

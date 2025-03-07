@@ -1,34 +1,26 @@
+const cloudinary = require('cloudinary').v2;
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const multer = require('multer');
-const path = require('path');
+require('dotenv').config();
 
-// Set Storage Engine
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, '../uploads')); // Folder where images will be saved
-    },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + "_" + file.originalname); 
-    }
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-// File Type Filter
-const fileFilter = (req, file, cb) => {
-    const allowedTypes = /jpeg|jpg|png|gif/;
-    const extname = allowedTypes.test(path.extname(file.originalname).toLowerCase());
-    const mimetype = allowedTypes.test(file.mimetype);
 
-    if (extname && mimetype) {
-        return cb(null, true);
-    } else {
-        cb(new Error('Only images (jpeg, jpg, png, gif) are allowed!'));
-    }
-};
-
-// Multer Upload Middleware
-const upload = multer({
-    storage: storage,
-    limits: { fileSize: parseInt(process.env.MAX_FILE_SIZE)}, // 5MB file limit
-    fileFilter,
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'uploads', // Folder name in Cloudinary
+    format: async (req, file) => 'png', // Convert all images to PNG
+    public_id: (req, file) => Date.now() + '-' + file.originalname // Unique filename
+  }
 });
+
+
+const upload = multer({ storage });
 
 module.exports = upload;
