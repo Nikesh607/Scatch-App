@@ -3,7 +3,7 @@ const router = express.Router();
 const {body} = require('express-validator');
 const ownerController = require('../controllers/owner.controller');
 const authMiddleware = require('../middleware/auth.middleware');
-const upload = require('../config/multer');
+const upload = require('../config/cloudinary');
 const uploadController = require('../controllers/upload.controller');
 
 
