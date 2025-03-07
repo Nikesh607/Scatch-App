@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from "react";
 import { NavLink,} from 'react-router-dom';
-import axiosInstance from '../config/axios.config';
+import axiosInstance from '../config/axios.config'
 
 const Create_product = () => {
 
@@ -29,7 +29,6 @@ const Create_product = () => {
 
     try {
       const response = await axiosInstance.post('/owners/createproduct', formdata);
-    
       console.log(response.data);
     } catch (error) {
       console.error("Error:", error.response?.data?.message || error.message);
