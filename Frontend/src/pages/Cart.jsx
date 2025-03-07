@@ -34,7 +34,7 @@ const Cart = () => {
           <div key={item._id} className="card w-full flex justify-between bg-white rounded-lg p-4 shadow-md">
             <div className="flex gap-4">
               <img className='w-32 h-32 object-cover rounded-md'
-                src={`${import.meta.env.VITE_API_BASE_URL}${item.image}`}
+                src={item.image}
                 alt={item.productname}
               />
               <div className="flex flex-col justify-between">

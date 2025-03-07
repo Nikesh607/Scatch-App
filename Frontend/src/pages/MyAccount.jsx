@@ -148,7 +148,7 @@ const MyAccount = ({ isOwner }) => {
           ) : (orders.length > 0 ? (
             orders.map((order,index) => (
               <div key={order._id || `${order.productname}-${index}`} className="order-card w-16 max-h-60 flex flex-col justify-between rounded-lg" style={{ backgroundColor: order.bgcolor }}>
-                <img className=" h-16 object-cover" src={`${import.meta.env.VITE_API_BASE_URL}${order.image}`} alt={order.productname} />
+                <img className=" h-16 object-cover" src={order.image} alt={order.productname} />
               </div>
             ))
           ) : (
