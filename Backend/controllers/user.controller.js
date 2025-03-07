@@ -20,7 +20,12 @@ module.exports.registerUser = async (req, res) => {
         contact
     });
     const token = user.generateAuthToken();
-    res.cookie('token', token);
+    res.cookie('token', token, {
+        httpOnly: true,
+        secure: true, // Required for HTTPS connections
+        sameSite: 'none', // Critical for cross-site cookies
+        maxAge: 24 * 60 * 60 * 1000 // 1 day
+      });
     res.status(201).json({token, user}); 
 }
 
@@ -41,7 +46,12 @@ module.exports.loginUser = async (req, res) => {
         return res.status(401).json({message: 'Invalid email or password'});
     }
     const token = user.generateAuthToken();
-    res.cookie('token', token);
+    res.cookie('token', token, {
+        httpOnly: true,
+        secure: true, // Required for HTTPS connections
+        sameSite: 'none', // Critical for cross-site cookies
+        maxAge: 24 * 60 * 60 * 1000 // 1 day
+      });
 
     res.status(200).json({token, user});
 }
@@ -222,7 +232,7 @@ module.exports.getUserProfile = async (req, res) => {
 
 module.exports.logoutUser = async (req, res) => {
     res.clearCookie('token');
-    const token = req.cookies.token || req.headers.authorization.split(' ')[1];
+    const token = req.cookies.token || req.headers.authorization?.split(' ')[1];
     await blacklistToken.create({token});
     res.status(200).json({message: 'Logged out successfully'});
 }
