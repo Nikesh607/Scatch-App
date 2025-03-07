@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axiosInstance from '../config/axios.config'
 
-const createownerpage = () => {
+const Createowner = () => {
     const navigate = useNavigate()
 
     const [FirstName, setFirstName] = useState("")
@@ -148,4 +148,4 @@ const createownerpage = () => {
     )
 }
 
-export default createownerpage
+export default Createowner

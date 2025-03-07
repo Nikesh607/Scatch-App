@@ -9,7 +9,7 @@ import MyAccount from './pages/MyAccount.jsx'
 import Login_signup from './pages/Login_Signup.jsx'
 import OwnerPage from './pages/Owner_page.jsx'
 import CreateProduct from './pages/Create_product.jsx'
-import createownerpage from './pages/createownerpage.jsx'
+import Createowner from './pages/createowner.jsx'
 
 
 const router = createBrowserRouter([
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'owner/create',
-        element: <createownerpage/>,
+        element: <Createowner/>,
       },
       
     ],
