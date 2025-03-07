@@ -32,16 +32,19 @@ const MyAccount = ({ isOwner }) => {
 
     fetchProfile()
 
-    const fetchOrders = async () => {
-      try {
-        const response = await axiosInstance.get('/users/orders');
-        setOrders(response.data);
-      } catch (error) {
-        console.error("Error fetching orders:", error.response?.data?.message || error.message);
-      }
-    };
-
-    fetchOrders();
+    if (!isOwner) { 
+      const fetchOrders = async () => {
+        try {
+          const response = await axiosInstance.get('/users/orders');
+          setOrders(response.data);
+        } catch (error) {
+          console.error("Error fetching orders:", error.response?.data?.message || error.message);
+        }
+      };
+    
+      fetchOrders();
+    }
+    
 
   }, [isOwner])
 
