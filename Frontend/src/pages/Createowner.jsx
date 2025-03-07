@@ -40,7 +40,7 @@ const Createowner = () => {
             setGstin("")
 
             // Redirect to home page
-            navigate('/', { replace: true })
+            navigate('/owner', { replace: true })
 
         } catch (error) {
             console.error('Registration error:', error.response?.data?.message || 'Registration failed')
