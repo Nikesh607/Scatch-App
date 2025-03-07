@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from "react";
 import { NavLink,} from 'react-router-dom';
+import axiosInstance from '../config/axios.config';
 
 const Create_product = () => {
 
