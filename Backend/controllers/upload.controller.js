@@ -1,6 +1,9 @@
 const productModel = require("../models/product.model");
 
 module.exports.uploadFile = async (req, res) =>{
+    
+  console.log('Request File:', req.file); // Debugging line
+  console.log('Request Body:', req.body); // Debugging line
     if (!req.file) {
         return res.status(400).json({ message: "No file uploaded!" });
     }
