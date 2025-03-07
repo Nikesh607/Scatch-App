@@ -60,7 +60,7 @@ const Login_signup = () => {
         password: Password
       }
 
-      if (Email === "ownertest@test.com") {
+      if (Email === "owner@owner.com") {
         try {
           const { data } = await axiosInstance.post('/owners/login', loginData,{
             withCredentials: true
