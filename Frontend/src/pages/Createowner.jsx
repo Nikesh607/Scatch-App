@@ -9,7 +9,6 @@ const Createowner = () => {
     const [LastName, setLastName] = useState("")
     const [CreatedUserEmail, setCreatedUserEmail] = useState("")
     const [CreatedUserPassword, setCreatedUserPassword] = useState("")
-    const [Contact, setContact] = useState("")
     const [gstin, setGstin] = useState("")
 
     const handleCreateSubmit = async (e) => {
@@ -23,7 +22,6 @@ const Createowner = () => {
                 },
                 email: CreatedUserEmail,
                 password: CreatedUserPassword,
-                contact: Contact,
                 gstin: gstin,
             }
 
@@ -105,17 +103,6 @@ const Createowner = () => {
                                 type="password"
                                 name='Password'
                                 placeholder='Password' />
-                        </div>
-                        <div>
-                            <input required
-                                value={Contact}
-                                onChange={(e) => {
-                                    setContact(e.target.value)
-                                }}
-                                className='w-[350px] px-4 py-3 rounded-md'
-                                type="tel"
-                                name='Contact'
-                                placeholder='Contact' />
                         </div>
                         <div>
                             <input required
