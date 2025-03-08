@@ -60,9 +60,10 @@ export const CartProvider = ({ children }) => {
             setError(null);
 
             const token = getToken();
+            console.log(token)
             if (!token || isTokenExpired(token)) {
                 localStorage.removeItem('token'); // Remove expired token
-                navigate('/login');
+                // navigate('/login');
                 throw new Error('Authentication required');
             }
 
