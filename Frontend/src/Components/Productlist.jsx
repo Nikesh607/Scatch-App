@@ -21,12 +21,12 @@ const ProductList = ({ sortBy, newcollection }) => {
       setError(null);
       setAdding(product._id);
       await addToCart(product);
+      alert('Product added to cart');
     } catch (error) {
       setError(error.message || 'Failed to add to cart');
       console.error('Failed to add to cart:', error);
     } finally {
       setAdding(null);
-      alert('Product added to cart');
     }
   };
 
