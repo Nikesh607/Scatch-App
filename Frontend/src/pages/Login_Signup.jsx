@@ -76,11 +76,12 @@ const Login_signup = () => {
         }
       }
 
-      const { token,data } = await axiosInstance.post('/users/login', loginData,{
+      const response = await axiosInstance.post('/users/login', loginData, {
         withCredentials: true
       })
+      const { token, user } = response.data;
       localStorage.setItem('token', token);
-      console.log('User login successful:', data)
+      console.log('User login successful:', user)
 
       setEmail("")
       setPassword("")
