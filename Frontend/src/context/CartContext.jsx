@@ -63,7 +63,7 @@ export const CartProvider = ({ children }) => {
             console.log(token)
             if (!token || isTokenExpired(token)) {
                 localStorage.removeItem('token'); // Remove expired token
-                // navigate('/login');
+                navigate('/login');
                 throw new Error('Authentication required');
             }
 
