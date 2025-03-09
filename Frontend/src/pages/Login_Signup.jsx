@@ -29,11 +29,13 @@ const Login_signup = () => {
         contact: Contact
       }
 
-      const { data } = await axiosInstance.post('/users/register', registerData,{
+      const response = await axiosInstance.post('/users/register', registerData,{
         withCredentials: true  // Add this to ensure cookies are handled
       })
+      const { token, user } = response.data;
+      localStorage.setItem('token', token);
       
-      console.log('Registration successful:', data)
+      console.log('Registration successful:', user)
 
       // Clear form
       setFirstName("")
