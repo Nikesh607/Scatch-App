@@ -48,6 +48,7 @@ const Login_signup = () => {
       navigate('/', { replace: true })
 
     } catch (error) {
+      alert("incorrect email or password")
       console.error('Registration error:', error.response?.data?.message || 'Registration failed')
       // Add error handling UI here if needed
     }
@@ -73,6 +74,7 @@ const Login_signup = () => {
           navigate('/owner', { replace: true })
           return
         } catch (ownerError) {
+          alert("incorrect email or password")
           setLoginError('Owner login failed. Please check your credentials.')
           return
         }
@@ -90,6 +92,7 @@ const Login_signup = () => {
       navigate('/', { replace: true })
 
     } catch (error) {
+      alert("incorrect email or password")
       console.error('Login error:', error.response?.data?.message || 'Login failed')
     }
   }
