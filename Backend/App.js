@@ -13,7 +13,7 @@ const cookieParser = require('cookie-parser');
 connecttoDB();
 
 App.use(cors({
-    origin: 'https://scatch-app-frontend.onrender.com' || 'https://localhost:5173', // Your frontend URL
+    origin: 'https://scatch-app-frontend.onrender.com' || 'http://localhost:5173', // Your frontend URL
     credentials: true,               // Allow credentials (cookies)
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
