@@ -18,8 +18,8 @@ const Home = () => {
     }, [])
 
     return (
-        <div className=' flex gap-7 mx-16 mr-40 '>
-            <div className="left-container  my-6 w-1/5 min-h-[calc(100vh-120px)]">
+        <div className=' flex gap-7 mx-12 mr-40 '>
+            <div className="left-container  my-6 py-3 pl-4 w-1/5 rounded-xl min-h-[calc(100vh-120px)] bg-[#e9eaed]">
                 <div className='flex flex-col gap-72'>
                     <div className='flex flex-col gap-20'>
                         <div className='flex items-center'>

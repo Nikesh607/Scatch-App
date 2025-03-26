@@ -10,7 +10,7 @@ function App() {
       <div className="flex flex-col min-h-screen"> 
       <CartProvider>
         <Navbar />
-        <div className="line h-1 w-full bg-gray-400"></div>
+        <div className="line h-1 w-full bg-gray-400" ></div>
         
         <div className="flex-grow"> 
           <Outlet />

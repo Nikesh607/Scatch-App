@@ -61,11 +61,11 @@ const ProductList = ({ sortBy, newcollection }) => {
         </div>
       )}
       {displayedProducts.map((product) => (
-        <div key={product._id} className="card w-[15%] max-h-60 flex flex-col justify-between rounded-lg" style={{ backgroundColor: product.bgcolor }}>
-          <img className="w-full min-h-[175px] object-cover" src={product.image} alt={product.productname} />
-          <div className="info h-full rounded-md" style={{ backgroundColor: product.bgcolor }}>
+        <div key={product._id} className="card w-[15%] max-h-60 flex flex-col justify-between hover:scale-105">
+          <img className="w-full min-h-[175px] object-cover rounded-[30px]" src={product.image} alt={product.productname} />
+          <div className="info h-full rounded-[10px]" style={{ backgroundColor: product.bgcolor }}>
             <p className='text-lg text-center' style={{ color: product.textcolor }}>{product.productname}</p>
-            <div className='flex justify-between items-center p-1 rounded-sm' style={{ backgroundColor: product.panelcolor }}>
+            <div className='flex justify-between items-center p-1 rounded-full' style={{ backgroundColor: product.panelcolor }}>
               <div className="flex flex-col items-center">
                 <p className='flex items-center' style={{ color: product.textcolor }}>
                   <LiaRupeeSignSolid />
