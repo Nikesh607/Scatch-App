@@ -62,7 +62,7 @@ const ProductList = ({ sortBy, newcollection }) => {
       )}
       {displayedProducts.map((product) => (
         <div key={product._id} className="card w-[17%] max-h-[272px] flex flex-col gap-1 justify-between hover:scale-105">
-          <img className="w-full min-h-[220px] rounded-[12px] shadow-lg shadow-black" src={product.image} alt={product.productname} />
+          <img className="w-full min-h-[220px] rounded-[12px] shadow-sm shadow-black" src={product.image} alt={product.productname} />
           <div className="info mx-[4px]" style={{ backgroundColor: product.bgcolor,opacity: 0.7,color: product.textcolor }}>
             <p className='text-[18px] leading-[1.5rem]  ' style={{ color: product.textcolor }}>{product.productname}</p>
             <div className='flex justify-between items-center text-[14px]' style={{ backgroundColor: product.panelcolor }}>
