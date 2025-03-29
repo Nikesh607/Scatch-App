@@ -61,23 +61,17 @@ const ProductList = ({ sortBy, newcollection }) => {
         </div>
       )}
       {displayedProducts.map((product) => (
-        <div key={product._id} className="card w-[15%] max-h-60 flex flex-col justify-between hover:scale-105">
+        <div key={product._id} className="card w-[15%] max-h-56 flex flex-col gap-2 justify-between hover:scale-105">
           <img className="w-full min-h-[175px] object-cover rounded-[30px]" src={product.image} alt={product.productname} />
-          <div className="info h-full rounded-[10px]" style={{ backgroundColor: product.bgcolor }}>
-            <p className='text-lg text-center' style={{ color: product.textcolor }}>{product.productname}</p>
-            <div className='flex justify-between items-center p-1 rounded-full' style={{ backgroundColor: product.panelcolor }}>
+          <div className="info mx-[1px]" style={{ backgroundColor: product.bgcolor }}>
+            <p className='text-[18px] leading-[1.5rem]  ' style={{ color: product.textcolor }}>{product.productname}</p>
+            <div className='flex justify-between items-center text-[14px]' style={{ backgroundColor: product.panelcolor }}>
               <div className="flex flex-col items-center">
-                <p className='flex items-center' style={{ color: product.textcolor }}>
-                  <LiaRupeeSignSolid />
-                  {product.price - product.discount}
-                </p>
-                <p className='flex items-center line-through text-[12px]'>
+                <p className='flex items-center '>
                   <LiaRupeeSignSolid />
                   {product.price}
                 </p>
               </div>
-              <p className='text-[12px]'>-{Math.round((product.discount / product.price) * 100)}%</p>
-
               <button
                 onClick={() => handleAddToCart(product)}
                 disabled={adding === product._id}
@@ -88,7 +82,7 @@ const ProductList = ({ sortBy, newcollection }) => {
                     <div className="animate-spin h-5 w-5 border-2 border-white rounded-full"></div>
                   </div>
                 ) : (
-                  <FiPlus className='w-8 h-8 bg-white rounded-full p-1' />
+                  <FiPlus className='w-8 h-4 bg-[#54c796]' />
                 )}
               </button>
             </div>
