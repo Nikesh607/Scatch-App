@@ -4,7 +4,7 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-4">
+    <footer className="bg-[#111314] text-gray-300 py-4">
       <div className="container max-w-screen pl-52 px-6 flex flex-col md:flex-row justify-between">
         {/* Left Section */}
         <div className="md:w-1/3 mb-6 md:mb-0">
@@ -43,7 +43,7 @@ const Footer = () => {
           <p>contact@Scatch.com</p>
         </div>
       </div>
-      <div className="border-t border-gray-700 mt-6 pt-6 text-center text-sm">
+      <div className="border-t border-gray-700 mt-2 pt-2 text-center text-sm">
         Copyright 2024 © Scatch.com - All Rights Reserved.
       </div>
     </footer>

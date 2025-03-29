@@ -54,19 +54,19 @@ const ProductList = ({ sortBy, newcollection }) => {
 
   return (
 
-    <div className="right-container my-6 w-full flex gap-12 flex-wrap min-h-[calc(100vh-120px)]">
+    <div className="right-container my-6 w-full flex gap-[18px] flex-wrap min-h-[calc(100vh-120px)]">
       {error && (
         <div className="fixed top-4 right-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
           {error === 'Authentication required' ? 'Please log in to add items to your cart.' : error}
         </div>
       )}
       {displayedProducts.map((product) => (
-        <div key={product._id} className="card w-[15%] max-h-56 flex flex-col gap-2 justify-between hover:scale-105">
-          <img className="w-full min-h-[175px] object-cover rounded-[30px]" src={product.image} alt={product.productname} />
-          <div className="info mx-[1px]" style={{ backgroundColor: product.bgcolor }}>
+        <div key={product._id} className="card w-[15%] max-h-[272px] flex flex-col gap-1 justify-between hover:scale-105">
+          <img className="w-full min-h-[220px] rounded-[30px]" src={product.image} alt={product.productname} />
+          <div className="info mx-[4px]" style={{ backgroundColor: product.bgcolor }}>
             <p className='text-[18px] leading-[1.5rem]  ' style={{ color: product.textcolor }}>{product.productname}</p>
             <div className='flex justify-between items-center text-[14px]' style={{ backgroundColor: product.panelcolor }}>
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center ">
                 <p className='flex items-center '>
                   <LiaRupeeSignSolid />
                   {product.price}
@@ -82,7 +82,7 @@ const ProductList = ({ sortBy, newcollection }) => {
                     <div className="animate-spin h-5 w-5 border-2 border-white rounded-full"></div>
                   </div>
                 ) : (
-                  <FiPlus className='w-8 h-4 bg-[#54c796]' />
+                  <FiPlus className='w-[40px] h-[22px] stroke-white rounded-full bg-[#54c796]' />
                 )}
               </button>
             </div>
