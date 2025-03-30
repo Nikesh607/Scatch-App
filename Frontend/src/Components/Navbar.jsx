@@ -12,7 +12,7 @@ const Navbar = () => {
     const myhomepath = isOwnerprofile ? '/owner' : '/home'
 
     return (
-        <div className='flex justify-between items-center px-16 pr-40 h-12 rounded-3xl shadow-[0_8px_10px_rgba(0,0,0,0.50)] bg-[#d9d9d9]'>
+        <div className='flex justify-between items-center px-16  h-12 rounded-3xl shadow-[0_8px_10px_rgba(0,0,0,0.50)] bg-[#d9d9d9]'>
             <img className='w-40 rounded-3xl' src={Logo} alt="Logo" />
             <div>
                 <ul className="flex gap-10">
@@ -23,6 +23,7 @@ const Navbar = () => {
                     <div className='flex gap-8 mx-6'>
                         {!isOwnerRoute && <NavLink to="/Cart">Cart</NavLink>}
                         <NavLink to={myAccountPath}>My Account</NavLink>
+                        <NavLink className="text-green-600 font-extrabold " to="/Login_Signup">Login</NavLink>
                     </div>
                 </ul>
             </div>
