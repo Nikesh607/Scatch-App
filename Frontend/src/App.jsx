@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-col min-h-screen"> 
+      <div className="flex flex-col min-h-screen tourney-myfontstyle"> 
       <CartProvider>
         <Navbar />
         <div className="line h-1 w-full bg-gray-400" ></div>
