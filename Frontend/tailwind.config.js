@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Megrim', 'sans-serif'], // This makes Tourney the default font
+      },
+    },
   },
   plugins: [],
 }
