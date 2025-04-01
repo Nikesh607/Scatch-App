@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Megrim', 'sans-serif'], // This makes Tourney the default font
+        sans: ['Coda', 'sans-serif'], // This makes Tourney the default font
       },
     },
   },
