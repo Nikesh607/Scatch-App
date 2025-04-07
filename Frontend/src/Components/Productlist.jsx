@@ -55,7 +55,7 @@ const ProductList = ({ sortBy, newcollection }) => {
 
   return (
 
-    <div className="right-container my-6 w-full flex gap-[18px] flex-wrap min-h-[calc(100vh-120px)]">
+    <div className="right-container my-6 w-full flex gap-[33px] flex-wrap min-h-[calc(100vh-120px)]">
       {error && (
         <div className="fixed top-4 right-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
           {error === 'Authentication required' ? 'Please log in to add items to your cart.' : error}
